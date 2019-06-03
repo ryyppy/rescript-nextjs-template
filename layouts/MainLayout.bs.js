@@ -26,14 +26,14 @@ function MainLayout$Navigation(Props) {
                       href: "/",
                       children: React.createElement("a", {
                             className: "px-3"
-                          }, Util.ReactStuff[/* s */0]("Bindings"))
+                          }, Util.ReactStuff[/* s */0]("Home"))
                     }), React.createElement(Link.default, {
                       href: "/examples",
                       children: React.createElement("a", {
                             className: "px-3"
                           }, Util.ReactStuff[/* s */0]("Examples"))
                     }), React.createElement("a", {
-                      className: "px-3",
+                      className: "px-3 font-bold",
                       href: "https://github.com/ryyppy/nextjs-default",
                       target: "_blank"
                     }, Util.ReactStuff[/* s */0]("Github"))));

@@ -16,10 +16,10 @@ module Navigation = {
         </a>
       </Link>
       <div className="flex w-2/3 justify-end">
-        <Link href="/"> <a className="px-3"> "Bindings"->s </a> </Link>
+        <Link href="/"> <a className="px-3"> "Home"->s </a> </Link>
         <Link href="/examples"> <a className="px-3"> "Examples"->s </a> </Link>
         <a
-          className="px-3"
+          className="px-3 font-bold"
           target="_blank"
           href="https://github.com/ryyppy/nextjs-default">
           "Github"->s

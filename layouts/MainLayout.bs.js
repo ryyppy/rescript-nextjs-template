@@ -47,11 +47,13 @@ function MainLayout(Props) {
     minWidth: "20rem"
   };
   return React.createElement("div", {
-              className: "max-w-5xl text-gray-900 font-base",
+              className: "flex lg:justify-center",
               style: minWidth
-            }, React.createElement(MainLayout$Navigation, { }), React.createElement("main", {
-                  className: "mt-4 mx-4"
-                }, children));
+            }, React.createElement("div", {
+                  className: "max-w-5xl w-full lg:w-3/4 text-gray-900 font-base"
+                }, React.createElement(MainLayout$Navigation, { }), React.createElement("main", {
+                      className: "mt-4 mx-4"
+                    }, children)));
 }
 
 var Link$1 = 0;

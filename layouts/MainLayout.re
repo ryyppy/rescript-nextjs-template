@@ -17,9 +17,7 @@ module Navigation = {
       </Link>
       <div className="flex w-2/3 justify-end">
         <Link href="/"> <a className="px-3"> "Bindings"->s </a> </Link>
-        <Link href="/examples">
-          <a className="px-3"> "Examples"->s </a>
-        </Link>
+        <Link href="/examples"> <a className="px-3"> "Examples"->s </a> </Link>
         <a
           className="px-3"
           target="_blank"
@@ -33,8 +31,10 @@ module Navigation = {
 [@react.component]
 let make = (~children) => {
   let minWidth = ReactDOMRe.Style.make(~minWidth="20rem", ());
-  <div style=minWidth className="max-w-5xl text-gray-900 font-base">
-    <Navigation />
-    <main className="mt-4 mx-4"> children </main>
+  <div style=minWidth className="flex lg:justify-center">
+    <div className="max-w-5xl w-full lg:w-3/4 text-gray-900 font-base">
+      <Navigation />
+      <main className="mt-4 mx-4"> children </main>
+    </div>
   </div>;
 };

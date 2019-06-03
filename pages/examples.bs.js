@@ -9,15 +9,20 @@ import '../styles/main.css'
 ;
 
 function Examples$default(Props) {
-  var name = Props.name;
+  var msg = Props.msg;
+  var href = Props.href;
   return React.createElement(MainLayout.make, {
-              children: Util.ReactStuff[/* s */0](name)
-            });
+              children: null
+            }, Util.ReactStuff[/* s */0](msg), React.createElement("a", {
+                  href: href,
+                  target: "_blank"
+                }, Util.ReactStuff[/* s */0]("`pages/examples.re`")));
 }
 
 function getInitialProps(_ctx) {
   return Promise.resolve({
-              name: "M. Mustermann"
+              msg: "This page was rendered with getInitialProps. You can find the source code here: ",
+              href: "https://github.com/ryyppy/nextjs-default/tree/master/pages/examples.re"
             });
 }
 

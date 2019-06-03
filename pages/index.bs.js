@@ -1,25 +1,42 @@
 
 
+import * as Util from "../common/util.bs.js";
+import * as Block from "bs-platform/lib/es6/block.js";
 import * as React from "react";
 import * as MainLayout from "../layouts/MainLayout.bs.js";
 
 require('../styles/main.css')
 ;
 
-function Index(Props) {
-  return React.createElement(MainLayout.make, {
-              children: React.createElement("h1", undefined, "next-default")
-            });
+function Index$P(Props) {
+  var children = Props.children;
+  return React.createElement("p", {
+              className: "mb-2"
+            }, children);
 }
 
-var Link = 0;
+var P = /* module */Block.localModule(["make"], [Index$P]);
+
+function Index(Props) {
+  return React.createElement(MainLayout.make, {
+              children: null
+            }, React.createElement("h1", {
+                  className: "text-3xl font-semibold"
+                }, "What is this about?"), React.createElement(Index$P, {
+                  children: Util.ReactStuff[/* s */0](" This is a simple template for a Next\n      project using Reason & TailwindCSS.")
+                }), React.createElement("h2", {
+                  className: "text-2xl font-semibold mt-5"
+                }, Util.ReactStuff[/* s */0]("Quick Start")), React.createElement(Index$P, {
+                  children: React.createElement("pre", undefined, Util.ReactStuff[/* s */0]("git clone https://github.com/ryyppy/nextjs-default.git my-project\ncd my-project\nrm -rf .git"))
+                }));
+}
 
 var make = Index;
 
 var $$default = Index;
 
 export {
-  Link ,
+  P ,
   make ,
   $$default ,
   $$default as default,

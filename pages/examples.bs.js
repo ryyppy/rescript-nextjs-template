@@ -13,10 +13,10 @@ function Examples$default(Props) {
   var href = Props.href;
   return React.createElement(MainLayout.make, {
               children: null
-            }, Util.ReactStuff[/* s */0](msg), React.createElement("a", {
+            }, Util.ReactStuff.s(msg), React.createElement("a", {
                   href: href,
                   target: "_blank"
-                }, Util.ReactStuff[/* s */0]("`pages/examples.re`")));
+                }, Util.ReactStuff.s("`pages/examples.re`")));
 }
 
 function getInitialProps(_ctx) {

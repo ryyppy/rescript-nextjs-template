@@ -1,7 +1,6 @@
 
 
 import * as Util from "../common/util.bs.js";
-import * as Block from "bs-platform/lib/es6/block.js";
 import * as React from "react";
 import * as Link from "next/link";
 
@@ -17,29 +16,31 @@ function MainLayout$Navigation(Props) {
                             src: "/static/zeit-black-triangle.svg"
                           }), React.createElement("span", {
                             className: "text-xl ml-2 align-middle font-semibold"
-                          }, Util.ReactStuff[/* s */0]("Next"), React.createElement("span", {
+                          }, Util.ReactStuff.s("Next"), React.createElement("span", {
                                 className: "text-orange-800"
-                              }, Util.ReactStuff[/* s */0]("RE"))))
+                              }, Util.ReactStuff.s("RE"))))
                 }), React.createElement("div", {
                   className: "flex w-2/3 justify-end"
                 }, React.createElement(Link.default, {
                       href: "/",
                       children: React.createElement("a", {
                             className: "px-3"
-                          }, Util.ReactStuff[/* s */0]("Home"))
+                          }, Util.ReactStuff.s("Home"))
                     }), React.createElement(Link.default, {
                       href: "/examples",
                       children: React.createElement("a", {
                             className: "px-3"
-                          }, Util.ReactStuff[/* s */0]("Examples"))
+                          }, Util.ReactStuff.s("Examples"))
                     }), React.createElement("a", {
                       className: "px-3 font-bold",
                       href: "https://github.com/ryyppy/nextjs-default",
                       target: "_blank"
-                    }, Util.ReactStuff[/* s */0]("Github"))));
+                    }, Util.ReactStuff.s("Github"))));
 }
 
-var Navigation = /* module */Block.localModule(["make"], [MainLayout$Navigation]);
+var Navigation = {
+  make: MainLayout$Navigation
+};
 
 function MainLayout(Props) {
   var children = Props.children;

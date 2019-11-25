@@ -1,7 +1,6 @@
 
 
 import * as Util from "../common/util.bs.js";
-import * as Block from "bs-platform/lib/es6/block.js";
 import * as React from "react";
 import * as MainLayout from "../layouts/MainLayout.bs.js";
 
@@ -15,7 +14,9 @@ function Index$P(Props) {
             }, children);
 }
 
-var P = /* module */Block.localModule(["make"], [Index$P]);
+var P = {
+  make: Index$P
+};
 
 function Index(Props) {
   return React.createElement(MainLayout.make, {
@@ -23,11 +24,11 @@ function Index(Props) {
             }, React.createElement("h1", {
                   className: "text-3xl font-semibold"
                 }, "What is this about?"), React.createElement(Index$P, {
-                  children: Util.ReactStuff[/* s */0](" This is a simple template for a Next\n      project using Reason & TailwindCSS.")
+                  children: Util.ReactStuff.s(" This is a simple template for a Next\n      project using Reason & TailwindCSS.")
                 }), React.createElement("h2", {
                   className: "text-2xl font-semibold mt-5"
-                }, Util.ReactStuff[/* s */0]("Quick Start")), React.createElement(Index$P, {
-                  children: React.createElement("pre", undefined, Util.ReactStuff[/* s */0]("git clone https://github.com/ryyppy/nextjs-default.git my-project\ncd my-project\nrm -rf .git"))
+                }, Util.ReactStuff.s("Quick Start")), React.createElement(Index$P, {
+                  children: React.createElement("pre", undefined, Util.ReactStuff.s("git clone https://github.com/ryyppy/nextjs-default.git my-project\ncd my-project\nrm -rf .git"))
                 }));
 }
 

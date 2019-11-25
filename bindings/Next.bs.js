@@ -1,30 +1,28 @@
 
 
-import * as Block from "bs-platform/lib/es6/block.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 
-var Link = /* module */Block.localModule([], []);
+var Link = { };
 
-var Router = /* module */Block.localModule([], []);
+var Router = { };
 
-var Head = /* module */Block.localModule([], []);
+var Head = { };
 
-var $$Error = /* module */Block.localModule([], []);
+var $$Error = { };
 
 function Make(Page) {
   var inject = ( (cls, fn) => cls.getInitialProps = fn );
-  Curry._2(inject, Page[/* make */1], Page[/* getInitialProps */0]);
-  var $$default = Page[/* make */1];
-  return /* module */Block.localModule([
-            "inject",
-            "default"
-          ], [
-            inject,
-            $$default
-          ]);
+  Curry._2(inject, Page.make, Page.getInitialProps);
+  var $$default = Page.make;
+  return {
+          inject: inject,
+          $$default: $$default
+        };
 }
 
-var InitialPropsPage = /* module */Block.localModule(["Make"], [Make]);
+var InitialPropsPage = {
+  Make: Make
+};
 
 export {
   Link ,

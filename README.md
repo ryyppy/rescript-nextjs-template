@@ -7,18 +7,28 @@ This is a NextJS based template with following setup:
 - Basic Reason Bindings for Next
 - Preconfigured Dependencies: `reason-react`, `bs-fetch`, `@glennsl/bs-json`
 
+## How to remove unneeded Reason bindings
+
+```
+npm rm @glennsl/bs-json --save
+npm rm bs-fetch --save
+```
+
+After removing the dependency, make sure to update your `bsconfig.js`
+dependencies as well.
+
 ## Development
 
 Run BuckleScript in dev mode:
 
 ```
-yarn run bs:start
+npm run bs:start
 ```
 
 In another tab, run the Next dev server:
 
 ```
-yarn run dev
+npm run dev
 ```
 
 ## Useful commands
@@ -37,7 +47,7 @@ NODE_ENV=production postcss styles/main.css -o test.css
 
 ```
 # Make sure to uncomment the `target` attribute in `now.json` first, before you run this:
-yarn build
-PORT=3001 yarn start
+npm run build
+PORT=3001 npm start
 ```
 

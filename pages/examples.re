@@ -1,21 +1,21 @@
-%raw
-"import '../styles/main.css'";
-
 open Util.ReactStuff;
-open Next.InitialPropsPage;
 
-[@react.component]
-let default = (~msg: string, ~href: string) =>
-  <MainLayout> msg->s <a href target="_blank"> "`pages/examples.re`"->s </a> </MainLayout>;
+type props = {
+  msg: string,
+  href: string,
+};
 
-let getInitialProps = _ctx =>
-  Js.Promise.resolve({
-    "msg": "This page was rendered with getInitialProps. You can find the source code here: ",
-    "href": "https://github.com/ryyppy/nextjs-default/tree/master/pages/examples.re",
-  });
+let default = (props: props) =>
+  <div>
+    props.msg->s
+    <a href={props.href} target="_blank"> "`pages/examples.re`"->s </a>
+  </div>;
 
-let inject: injectFn('jsProps) = [%bs.raw
-  {| (cls, fn) => cls.getInitialProps = fn |}
-];
-
-inject(default, getInitialProps);
+let getServerSideProps: Next.GetServerSideProps.t(props, {.}) =
+  _ctx => {
+    let props = {
+      msg: "This page was rendered with getServerSideProps. You can find the source code here: ",
+      href: "https://github.com/ryyppy/nextjs-default/tree/master/pages/examples.re",
+    };
+    Js.Promise.resolve({"props": props});
+  };

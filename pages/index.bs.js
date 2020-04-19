@@ -2,7 +2,6 @@
 
 import * as Util from "../common/util.bs.js";
 import * as React from "react";
-import * as MainLayout from "../layouts/MainLayout.bs.js";
 
 require('../styles/main.css')
 ;
@@ -19,9 +18,7 @@ var P = {
 };
 
 function Index(Props) {
-  return React.createElement(MainLayout.make, {
-              children: null
-            }, React.createElement("h1", {
+  return React.createElement("div", undefined, React.createElement("h1", {
                   className: "text-3xl font-semibold"
                 }, "What is this about?"), React.createElement(Index$P, {
                   children: Util.ReactStuff.s(" This is a simple template for a Next\n      project using Reason & TailwindCSS.")

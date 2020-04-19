@@ -10,7 +10,7 @@ module P = {
 
 [@react.component]
 let make = () =>
-  <MainLayout>
+  <div>
     <h1 className="text-3xl font-semibold">
       "What is this about?"->ReasonReact.string
     </h1>
@@ -28,6 +28,6 @@ rm -rf .git|j}
         ->s
       </pre>
     </P>
-  </MainLayout>;
+  </div>;
 
 let default = make;

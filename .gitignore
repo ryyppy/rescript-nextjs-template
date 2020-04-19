@@ -1,5 +1,6 @@
 out
 
+*.bs.js
 .DS_Store
 *.swp
 *.swo

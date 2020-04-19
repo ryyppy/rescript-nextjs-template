@@ -1,35 +1,32 @@
 
 
-import * as Curry from "bs-platform/lib/es6/curry.js";
+
+var GetServerSideProps = { };
+
+var GetStaticProps = { };
+
+var GetStaticPaths = { };
 
 var Link = { };
 
-var Router = { };
+var Events = { };
+
+var Router = {
+  Events: Events
+};
 
 var Head = { };
 
 var $$Error = { };
 
-function Make(Page) {
-  var inject = ( (cls, fn) => cls.getInitialProps = fn );
-  Curry._2(inject, Page.make, Page.getInitialProps);
-  var $$default = Page.make;
-  return {
-          inject: inject,
-          $$default: $$default
-        };
-}
-
-var InitialPropsPage = {
-  Make: Make
-};
-
 export {
+  GetServerSideProps ,
+  GetStaticProps ,
+  GetStaticPaths ,
   Link ,
   Router ,
   Head ,
   $$Error ,
-  InitialPropsPage ,
   
 }
 /* No side effect */

@@ -1,3 +1,40 @@
+module GetServerSideProps = {
+  // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
+  type context('params) = {
+    params: 'params,
+    query: Js.Dict.t(string),
+    /*req: Js.Nullable.t(Js.t('a)),*/
+  };
+
+  type t('props, 'params) =
+    context('params) => Js.Promise.t({. "props": 'props});
+};
+
+module GetStaticProps = {
+  // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
+  type context('props, 'params) = {
+    params: 'params,
+    query: Js.Dict.t(string),
+    req: Js.Nullable.t(Js.t('props)),
+  };
+
+  type t('props, 'params) =
+    context('props, 'params) => Js.Promise.t({. "props": 'props});
+};
+
+module GetStaticPaths = {
+  // 'params: dynamic route params used in dynamic routing paths
+  // Example: pages/[id].js would result in a 'params = { id: string }
+  type path('params) = {params: 'params};
+
+  type return('params) = {
+    paths: array(path('params)),
+    fallback: bool,
+  };
+
+  type t('params) = unit => Js.Promise.t(return('params));
+};
+
 module Link = {
   [@bs.module "next/link"] [@react.component]
   external make:
@@ -15,10 +52,43 @@ module Link = {
 };
 
 module Router = {
+  /*
+      Make sure to only register events via a useEffect hook!
+   */
+  module Events = {
+    type t;
+
+    [@bs.send]
+    external on:
+      (
+        t,
+        [@bs.string] [
+          | `routeChangeStart(string => unit)
+          | `routeChangeComplete(string => unit)
+          | `hashChangeComplete(string => unit)
+        ]
+      ) =>
+      unit =
+      "on";
+
+    [@bs.send]
+    external off:
+      (
+        t,
+        [@bs.string] [
+          | `routeChangeStart(string => unit)
+          | `routeChangeComplete(string => unit)
+          | `hashChangeComplete(string => unit)
+        ]
+      ) =>
+      unit =
+      "off";
+  };
+
   type router = {
-    .
-    "route": string,
-    "asPath": string,
+    route: string,
+    asPath: string,
+    events: Events.t,
   };
 
   [@bs.module "next/router"] external useRouter: unit => router = "useRouter";
@@ -33,44 +103,4 @@ module Error = {
   [@bs.module "next/head"] [@react.component]
   external make: (~statusCode: int, ~children: React.element) => React.element =
     "default";
-};
-
-module InitialPropsPage = {
-  type req = Js.t({.}); /* Request Obj */
-  type res = Js.t({.}); /* Response Obj */
-  type err = Js.t({.}); /* Err Obj */
-
-  type context = {
-    .
-    "query": Js.Dict.t(string),
-    "req": req,
-  };
-
-  type getInitialPropsFn('a) = context => Js.Promise.t(Js.t('a));
-
-  type injectFn('jsProps) =
-    (React.component(Js.t('jsProps)), getInitialPropsFn('jsProps)) => unit;
-
-  /* Experimental Functor Interface (practically working) */
-  module Make =
-         (
-           Page: {
-             type props;
-             type context;
-
-             let getInitialProps: context => Js.Promise.t(props);
-
-             let make: React.component(props);
-           },
-         ) => {
-    open! Page;
-    let inject:
-      (React.component(props), context => Js.Promise.t(props)) => unit = [%bs.raw
-      {| (cls, fn) => cls.getInitialProps = fn |}
-    ];
-
-    inject(make, getInitialProps);
-
-    let default = make;
-  };
 };

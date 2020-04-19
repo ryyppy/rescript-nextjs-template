@@ -57,7 +57,7 @@ function MainLayout(Props) {
                     }, children)));
 }
 
-var Link$1 = 0;
+var Link$1 = /* alias */0;
 
 var make = MainLayout;
 

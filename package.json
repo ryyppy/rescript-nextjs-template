@@ -19,6 +19,7 @@
   },
   "scripts": {
     "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next",
     "build": "bsb -clean-world -make-world && next build",
     "now-build": "bsb -clean-world -make-world && next build",
     "export": "next export",

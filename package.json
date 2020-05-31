@@ -28,6 +28,7 @@
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "bs-platform": "^7.1.1",
+    "cssnano": "^4.1.10",
     "tailwindcss": "1.4.6"
   }
 }

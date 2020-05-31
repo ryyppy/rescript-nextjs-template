@@ -1,4 +1,15 @@
 module.exports = {
+  purge: {
+    // Specify the paths to all of the template files in your project
+    content: [
+      './components/**/*.re',
+      './pages/**/*.re',
+      './layouts/**/*.re',
+    ],
+    options: {
+      whitelist: ["html", "body"],
+    }
+  },
   theme: {
     extend: {
     },

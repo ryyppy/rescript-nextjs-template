@@ -4,13 +4,11 @@
   "author": "Patrick Stapfer <ryyppy@users.noreply.github.com>",
   "license": "Apache License 2.0",
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.2",
     "@glennsl/bs-json": "^3.0.0",
     "@zeit/next-css": "^1.0.1",
     "bs-fetch": "^0.3.1",
     "gentype": "^3.6.0",
-    "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.3.5",
+    "next": "^9.4.4",
     "next-transpile-modules": "^3.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -31,7 +29,6 @@
     "autoprefixer": "^9.5.1",
     "bs-platform": "^7.1.1",
     "cssnano": "^4.1.10",
-    "postcss-easy-import": "^3.0.0",
-    "tailwindcss": "1.2.0"
+    "tailwindcss": "1.4.6"
   }
 }

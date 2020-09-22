@@ -1,28 +1,18 @@
-# NextJS Default Template
+# ReScript NextJS Starter
 
 This is a NextJS based template with following setup:
 
 - Full Tailwind config & basic css scaffold (+ production setup w/ purge-css & cssnano)
-- Reason + ReasonReact
-- Basic Reason Bindings for Next
-- Preconfigured Dependencies: `reason-react`, `bs-fetch`, `@glennsl/bs-json`
-
-## How to remove unneeded Reason bindings
-
-```
-npm rm @glennsl/bs-json --save
-npm rm bs-fetch --save
-```
-
-After removing the dependency, make sure to update your `bsconfig.js`
-dependencies as well.
+- [ReScript](https://rescript-lang.org) + React
+- Basic ReScript Bindings for Next
+- Preconfigured Dependencies: `reason-react`
 
 ## Development
 
-Run BuckleScript in dev mode:
+Run ReScript in dev mode:
 
 ```
-npm run bs:start
+npm run res:start
 ```
 
 In another tab, run the Next dev server:

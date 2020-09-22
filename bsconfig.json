@@ -1,9 +1,9 @@
 {
-  "name": "nextjs-default",
+  "name": "rescript-nextjs-template",
   "namespace": false,
   "reason": { "react-jsx": 3 },
   "refmt": 3,
-  "bs-dependencies": ["reason-react", "bs-fetch", "@glennsl/bs-json"],
+  "bs-dependencies": ["reason-react"],
   "ppx-flags": [],
   "sources": [
     { "dir": "common" },
@@ -16,7 +16,10 @@
     "module": "es6",
     "in-source": true
   },
-  "suffix": ".bs.js",
+  "suffix": ".js",
+  "warnings": {
+    "error": "+101+8"
+  },
   "bsc-flags": ["-bs-no-version-header", "-bs-super-errors", "-bs-g"],
   "gentypeconfig": {
     "language": "untyped",

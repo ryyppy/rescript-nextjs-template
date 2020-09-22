@@ -1,25 +1,40 @@
 module GetServerSideProps = {
-  // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
-  type context('params) = {
-    params: 'params,
-    query: Js.Dict.t(string),
-    /*req: Js.Nullable.t(Js.t('a)),*/
+  module Req = {
+    type t;
   };
 
-  type t('props, 'params) =
-    context('params) => Js.Promise.t({. "props": 'props});
-};
+  module Res = {
+    type t;
 
-module GetStaticProps = {
+    [@bs.send] external setHeader: (t, string, string) => unit = "setHeader";
+    [@bs.send] external write: (t, string) => unit = "write";
+    [@bs.send] external end_: t => unit = "end";
+  };
+
   // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
   type context('props, 'params) = {
-    params: 'params,
+    params: Js.t('params),
     query: Js.Dict.t(string),
-    req: Js.Nullable.t(Js.t('props)),
+    req: Req.t,
+    res: Res.t,
   };
 
   type t('props, 'params) =
     context('props, 'params) => Js.Promise.t({. "props": 'props});
+};
+
+module GetStaticProps = {
+  // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
+  type context('props, 'params, 'previewData) = {
+    params: 'params,
+    preview: option(bool), // preview is true if the page is in the preview mode and undefined otherwise.
+    previewData: Js.t('previewData),
+    query: Js.Dict.t(string),
+    req: Js.Nullable.t(Js.t('props)),
+  };
+
+  type t('props, 'params, 'previewData) =
+    context('props, 'params, 'previewData) => Js.Promise.t({. "props": 'props});
 };
 
 module GetStaticPaths = {
@@ -89,9 +104,13 @@ module Router = {
     route: string,
     asPath: string,
     events: Events.t,
+    query: Js.Dict.t(string),
   };
 
+  [@bs.send] external push: (router, string) => unit = "push";
+
   [@bs.module "next/router"] external useRouter: unit => router = "useRouter";
+  [@bs.send] external replace: (router, string) => unit = "replace";
 };
 
 module Head = {
@@ -103,4 +122,19 @@ module Error = {
   [@bs.module "next/error"] [@react.component]
   external make: (~statusCode: int, ~children: React.element) => React.element =
     "default";
+};
+
+module Dynamic = {
+  [@bs.deriving abstract]
+  type options = {
+    [@bs.optional]
+    ssr: bool,
+    [@bs.optional]
+    loading: unit => React.element,
+  };
+
+  [@bs.module "next/dynamic"]
+  external dynamic: (unit => Js.Promise.t('a), options) => 'a = "default";
+
+  [@bs.val] external import: string => Js.Promise.t('a) = "import";
 };

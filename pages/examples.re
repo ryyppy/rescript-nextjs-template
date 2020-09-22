@@ -1,5 +1,3 @@
-open Util.ReactStuff;
-
 type props = {
   msg: string,
   href: string,
@@ -7,11 +5,13 @@ type props = {
 
 let default = (props: props) =>
   <div>
-    props.msg->s
-    <a href={props.href} target="_blank"> "`pages/examples.re`"->s </a>
+    {React.string(props.msg)}
+    <a href={props.href} target="_blank">
+      {React.string("`pages/examples.re`")}
+    </a>
   </div>;
 
-let getServerSideProps: Next.GetServerSideProps.t(props, {.}) =
+let getServerSideProps =
   _ctx => {
     let props = {
       msg: "This page was rendered with getServerSideProps. You can find the source code here: ",

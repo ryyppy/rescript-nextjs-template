@@ -9,7 +9,7 @@ module PageComponent = {
 }
 
 type props = {
-  @bs.as("Component")
+  @as("Component")
   component: PageComponent.t,
   pageProps: pageProps,
 }

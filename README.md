@@ -44,10 +44,10 @@ Build CSS seperately via `postcss` (useful for debugging)
 
 ```
 # Devmode
-postcss styles/main.css -o test.css
+npx postcss styles/main.css -o test.css
 
 # Production
-NODE_ENV=production postcss styles/main.css -o test.css
+NODE_ENV=production npx postcss styles/main.css -o test.css
 ```
 
 ## Test production setup with Next

@@ -2,9 +2,9 @@ module.exports = {
   purge: {
     // Specify the paths to all of the template files in your project
     content: [
-      './components/**/*.re',
-      './pages/**/*.re',
-      './layouts/**/*.re',
+      './src/components/**/*.res',
+      './src/layouts/**/*.res',
+      './src/*.res',
     ],
     options: {
       safelist: ["html", "body"],

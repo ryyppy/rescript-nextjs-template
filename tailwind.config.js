@@ -1,8 +1,4 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
   purge: {
     // Specify the paths to all of the template files in your project
     content: [
@@ -11,9 +7,10 @@ module.exports = {
       './layouts/**/*.re',
     ],
     options: {
-      whitelist: ["html", "body"],
+      safelist: ["html", "body"],
     }
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
     },

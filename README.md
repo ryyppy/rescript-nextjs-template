@@ -2,7 +2,7 @@
 
 This is a NextJS based template with following setup:
 
-- Full Tailwind config & basic css scaffold (+ production setup w/ purge-css & cssnano)
+- Full Tailwind v2 config & basic css scaffold (+ production setup w/ purge-css & cssnano)
 - [ReScript](https://rescript-lang.org) + React
 - Basic ReScript Bindings for Next
 - Preconfigured Dependencies: `reason-react`

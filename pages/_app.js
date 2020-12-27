@@ -4,7 +4,7 @@ import * as React from "react";
 import * as MainLayout from "../layouts/MainLayout.js";
 import * as Router from "next/router";
 
-import '../styles/main.css'
+import 'styles/main.css'
 ;
 
 function $$default(props) {

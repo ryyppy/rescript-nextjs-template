@@ -9,7 +9,7 @@ function Index$P(Props) {
             }, children);
 }
 
-function make(param) {
+function $$default(param) {
   return React.createElement("div", undefined, React.createElement("h1", {
                   className: "text-3xl font-semibold"
                 }, "What is this about?"), React.createElement(Index$P, {
@@ -20,7 +20,8 @@ function make(param) {
 }
 
 export {
-  make ,
+  $$default ,
+  $$default as default,
   
 }
 /* react Not a pure module */

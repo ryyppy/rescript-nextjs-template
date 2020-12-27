@@ -1,2 +1,2 @@
 type props
-let make: props => React.element
+let default: props => React.element

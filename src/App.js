@@ -4,7 +4,7 @@ import * as React from "react";
 import * as MainLayout from "./layouts/MainLayout.js";
 import * as Router from "next/router";
 
-function make(props) {
+function $$default(props) {
   var router = Router.useRouter();
   var content = React.createElement(props.Component, props.pageProps);
   var match = router.route;
@@ -22,7 +22,8 @@ function make(props) {
 }
 
 export {
-  make ,
+  $$default ,
+  $$default as default,
   
 }
 /* react Not a pure module */

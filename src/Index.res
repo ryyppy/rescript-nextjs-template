@@ -3,7 +3,7 @@ module P = {
   let make = (~children) => <p className="mb-2"> children </p>
 }
 
-let make = () =>
+let default = () =>
   <div>
     <h1 className="text-3xl font-semibold"> {"What is this about?"->ReasonReact.string} </h1>
     <P>

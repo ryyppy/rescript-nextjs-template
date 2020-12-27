@@ -1,1 +1,1 @@
-let make: unit => React.element
+let default: unit => React.element

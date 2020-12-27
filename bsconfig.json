@@ -6,11 +6,7 @@
   "bs-dependencies": ["reason-react"],
   "ppx-flags": [],
   "sources": [
-    { "dir": "common" },
-    { "dir": "bindings" },
-    { "dir": "pages", "subdirs": true },
-    { "dir": "components", "subdirs": true },
-    "layouts"
+    { "dir": "src", "subdirs": true }
   ],
   "package-specs": {
     "module": "es6",

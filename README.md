@@ -36,6 +36,8 @@ Make sure to create interface files (`.resi`) for each `page/*.res` file.
 
 Fast Refresh requires you to **only export React components**, and it's easy to unintenionally export other values than that.
 
+For the 100% "always-works-method", we recommend putting your ReScript components in e.g. the `src` directory, and re-export them in plain `pages/*.js` files instead (check out the templates initial `pages` directory to see how we forward our React components to make sure we fulfill the Fast-Refresh naming conventions).
+
 ## Useful commands
 
 Build CSS seperately via `postcss` (useful for debugging)

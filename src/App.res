@@ -1,5 +1,3 @@
-%%raw("import 'styles/main.css'")
-
 // This type is based on the getInitialProps return value.
 // If you are using getServerSideProps or getStaticProps, you probably
 // will never need this
@@ -19,7 +17,7 @@ type props = {
 // We are not using `[@react.component]` since we will never
 
 // use <App/> within our Reason code. It's only used within `pages/_app.js`
-let default = (props: props): React.element => {
+let make = (props: props): React.element => {
   let {component, pageProps} = props
 
   let router = Next.Router.useRouter()

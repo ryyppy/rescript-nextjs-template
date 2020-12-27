@@ -1,5 +1,4 @@
 const bsconfig = require('./bsconfig.json');
-const withCSS = require('@zeit/next-css');
 
 const transpileModules = ["bs-platform"].concat(bsconfig["bs-dependencies"]);
 const withTM = require("next-transpile-modules")(transpileModules);
@@ -24,5 +23,4 @@ const config = {
   }
 };
 
-module.exports = withTM(withCSS(config));
-
+module.exports = withTM(config);

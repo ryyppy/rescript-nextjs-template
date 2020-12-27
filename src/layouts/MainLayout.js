@@ -37,10 +37,6 @@ function MainLayout$Navigation(Props) {
                     }, "Github")));
 }
 
-var Navigation = {
-  make: MainLayout$Navigation
-};
-
 function MainLayout(Props) {
   var children = Props.children;
   var minWidth = {
@@ -56,13 +52,9 @@ function MainLayout(Props) {
                     }, children)));
 }
 
-var Link$1;
-
 var make = MainLayout;
 
 export {
-  Link$1 as Link,
-  Navigation ,
   make ,
   
 }

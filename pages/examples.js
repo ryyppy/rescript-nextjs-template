@@ -1,27 +1,15 @@
+import ExamplesRes from "src/Examples.js";
 
+// This can be re-exported as is (no Fast-Refresh issues)
+export { getServerSideProps } from "src/Examples.js";
 
-import * as React from "react";
-
-function $$default(props) {
-  return React.createElement("div", undefined, props.msg, React.createElement("a", {
-                  href: props.href,
-                  target: "_blank"
-                }, "`pages/examples.re`"));
+// Note:
+// We need to wrap the make call with
+// a Fast-Refresh conform function name,
+// (in this case, uppercased first letter)
+//
+// If you don't do this, your Fast-Refresh will
+// not work!
+export default function Examples(props) {
+  return <ExamplesRes {...props}/>;
 }
-
-function getServerSideProps(_ctx) {
-  return Promise.resolve({
-              props: {
-                msg: "This page was rendered with getServerSideProps. You can find the source code here: ",
-                href: "https://github.com/ryyppy/nextjs-default/tree/master/pages/examples.re"
-              }
-            });
-}
-
-export {
-  $$default ,
-  $$default as default,
-  getServerSideProps ,
-  
-}
-/* react Not a pure module */

@@ -1,16 +1,14 @@
-module Link = Next.Link;
+module Link = Next.Link
 
 module Navigation = {
-  [@react.component]
+  @react.component
   let make = () =>
-    <nav
-      className="p-2 h-12 flex border-b border-gray-200 justify-between items-center text-sm">
+    <nav className="p-2 h-12 flex border-b border-gray-200 justify-between items-center text-sm">
       <Link href="/">
         <a className="flex items-center w-1/3">
           <img className="w-5" src="/static/zeit-black-triangle.svg" />
           <span className="text-xl ml-2 align-middle font-semibold">
-          {React.string("Next")}
-            <span className="text-orange-800"> {React.string("RE")} </span>
+            {React.string("Next")} <span className="text-orange-800"> {React.string("RE")} </span>
           </span>
         </a>
       </Link>
@@ -24,16 +22,15 @@ module Navigation = {
           {React.string("Github")}
         </a>
       </div>
-    </nav>;
-};
+    </nav>
+}
 
-[@react.component]
+@react.component
 let make = (~children) => {
-  let minWidth = ReactDOMRe.Style.make(~minWidth="20rem", ());
+  let minWidth = ReactDOMRe.Style.make(~minWidth="20rem", ())
   <div style=minWidth className="flex lg:justify-center">
     <div className="max-w-5xl w-full lg:w-3/4 text-gray-900 font-base">
-      <Navigation />
-      <main className="mt-4 mx-4"> children </main>
+      <Navigation /> <main className="mt-4 mx-4"> children </main>
     </div>
-  </div>;
-};
+  </div>
+}

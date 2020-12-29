@@ -8,18 +8,21 @@ module GetServerSideProps = {
 
     @send external setHeader: (t, string, string) => unit = "setHeader"
     @send external write: (t, string) => unit = "write"
-    @send external end_: t => unit = "end"
+    @send external end: t => unit = "end"
   }
 
   // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
-  type context<'props, 'params> = {
+  type context<'props, 'params, 'previewData> = {
     params: Js.t<'params>,
     query: Js.Dict.t<string>,
+    preview: option<bool>, // preview is true if the page is in the preview mode and undefined otherwise.
+    previewData: Js.Nullable.t<'previewData>,
     req: Req.t,
     res: Res.t,
   }
 
-  type t<'props, 'params> = context<'props, 'params> => Js.Promise.t<{"props": 'props}>
+  // The definition of a getServerSideProps function
+  type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<{"props": 'props}>
 }
 
 module GetStaticProps = {
@@ -28,10 +31,9 @@ module GetStaticProps = {
     params: 'params,
     preview: option<bool>, // preview is true if the page is in the preview mode and undefined otherwise.
     previewData: Js.Nullable.t<'previewData>,
-    query: Js.Dict.t<string>,
-    req: Js.Nullable.t<Js.t<'props>>,
   }
 
+  // The definition of a getStaticProps function
   type t<'props, 'params, 'previewData> = context<'props, 'params, 'previewData> => Js.Promise.t<{
     "props": 'props,
   }>
@@ -47,6 +49,7 @@ module GetStaticPaths = {
     fallback: bool,
   }
 
+  // The definition of a getStaticPaths function
   type t<'params> = unit => Js.Promise.t<return<'params>>
 }
 
@@ -134,8 +137,9 @@ module Dynamic = {
     loading: unit => React.element,
   }
 
+  /** Test **/
   @module("next/dynamic")
   external dynamic: (unit => Js.Promise.t<'a>, options) => 'a = "default"
 
-  @val external \"import": string => Js.Promise.t<'a> = "import"
+  @val external import_: string => Js.Promise.t<'a> = "import"
 }

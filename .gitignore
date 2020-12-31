@@ -7,7 +7,7 @@ out
 node_modules/
 .next/
 
-yarn-error.log
+npm-debug.log*
 
 .bsb.lock
 .merlin

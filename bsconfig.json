@@ -3,7 +3,7 @@
   "namespace": false,
   "reason": { "react-jsx": 3 },
   "refmt": 3,
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": ["@rescript/react"],
   "ppx-flags": [],
   "sources": [
     { "dir": "src", "subdirs": true }
@@ -16,7 +16,7 @@
   "warnings": {
     "error": "+101+8"
   },
-  "bsc-flags": ["-bs-super-errors", "-bs-g"],
+  "bsc-flags": ["-bs-g"],
   "gentypeconfig": {
     "language": "untyped",
     "shims": [],

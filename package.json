@@ -5,8 +5,8 @@
   "license": "Apache License 2.0",
   "dependencies": {
     "gentype": "^3.44.0",
-    "next": "^10.1.2",
-    "next-transpile-modules": "^4.1.0",
+    "next": "10.2.0",
+    "next-transpile-modules": "7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "@rescript/react": "^0.10.1",
@@ -15,17 +15,17 @@
   "scripts": {
     "dev": "next",
     "debug": "NODE_OPTIONS='--inspect' next",
-    "build": "bsb -clean-world -make-world && next build",
-    "now-build": "bsb -clean-world -make-world && next build",
+    "build": "rescript && next build",
+    "now-build": "rescript && next build",
     "export": "next export",
     "start": "next start -p $PORT",
-    "res:build": "bsb -make-world",
-    "res:clean": "bsb -clean-world",
-    "res:start": "bsb -make-world -w"
+    "res:build": "rescript",
+    "res:clean": "rescript clean",
+    "res:start": "rescript build -w"
   },
   "devDependencies": {
     "autoprefixer": "^10.1.0",
-    "bs-platform": "9.0.2",
+    "rescript": "9.1.2",
     "cssnano": "^4.1.10",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.1",

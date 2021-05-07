@@ -12,14 +12,13 @@
     "module": "es6",
     "in-source": true
   },
-  "suffix": ".js",
+  "suffix": ".mjs",
   "warnings": {
+    "number": "-3",
     "error": "+101+8"
   },
-  "bsc-flags": ["-bs-g"],
   "gentypeconfig": {
     "language": "untyped",
-    "shims": [],
-    "module": "es6"
+    "shims": []
   }
 }

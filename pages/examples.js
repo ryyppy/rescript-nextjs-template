@@ -1,7 +1,7 @@
-import ExamplesRes from "src/Examples.js";
+import ExamplesRes from "src/Examples.mjs";
 
 // This can be re-exported as is (no Fast-Refresh issues)
-export { getServerSideProps } from "src/Examples.js";
+export { getServerSideProps } from "src/Examples.mjs";
 
 // Note:
 // We need to wrap the make call with

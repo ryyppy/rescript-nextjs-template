@@ -49,30 +49,27 @@ We ship some general bindings for `NextJS`, but we try to keep them simple. Some
 
 As with every file fork, if you keep the changes git trackable, it's pretty straight-forward to pull in upstream changes later on.
 
-### Filenames with special characters
-
-ReScript > 8.3 now supports filenames with special characters: e.g. `pages/blog/[slug].res`.
-If you can't upgrade yet, you can create a e.g. `pages/blog/[slug].js` file, a `re_pages/blog_slug.re` file and then reexport the React component within the `[slug].js` file.
-
-We recommend upgrading to the newest ReScript (bs-platform) version as soon as possible to get the best experience for Next!
-
 ### Fast Refresh & ReScript
 
 Make sure to create interface files (`.resi`) for each `page/*.res` file.
 
-Fast Refresh requires you to **only export React components**, and it's easy to unintenionally export other values than that.
+Fast Refresh requires you to **only export React components**, and it's easy to unintenionally export other values that will disable Fast Refresh (you will see a message in the browser console whenever this happens).
 
 For the 100% "always-works-method", we recommend putting your ReScript components in e.g. the `src` directory, and re-export them in plain `pages/*.js` files instead (check out the templates initial `pages` directory to see how we forward our React components to make sure we fulfill the Fast-Refresh naming conventions).
 
+### Filenames with special characters
+
+ReScript supports filenames with special characters: e.g. `pages/blog/[slug].res`, but be aware that you can't access these these modules within other modules (since there is no syntax to express modules with e.g. `[` characters). Also don't forget to create an additional `.resi` file to comply to Fast Refresh rules.
+
 ## Q & A
 
-### Why are the generated `.js` files tracked in git?
+### Why are the generated `.mjs` files tracked in git?
 
 In ReScript, it's a good habit to keep track of the actual JS output the compiler emits. It allows quick sanity checking if we made any changes that actually have an impact on the resulting JS code (especially when doing major compiler upgrades, it's a good way to verify if production code will behave the same way as before the upgrade).
 
 This will also make it easier for your Non-ReScript coworkers to read and understand the changes in Github PRs, and call you out when you are writing inefficient code.
 
-If you completely disagree with this, you can delete the emitted `.js` files within the `src` directory and add `src/**/*.js` in your `.gitignore` of course.
+If you want to opt-out, feel free to remove all compiled `.mjs` files within the `src` directory and add `src/**/*.mjs` in your `.gitignore`.
 
 ### How trustworthy is this template?
 

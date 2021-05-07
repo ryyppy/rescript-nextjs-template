@@ -4,13 +4,9 @@
   "author": "Patrick Stapfer <ryyppy@users.noreply.github.com>",
   "license": "Apache License 2.0",
   "dependencies": {
-    "gentype": "^3.45.0",
     "next": "10.2.0",
-    "next-transpile-modules": "7.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "@rescript/react": "^0.10.1",
-    "request": "^2.88.0"
+    "react-dom": "^16.13.1"
   },
   "scripts": {
     "dev": "next",
@@ -24,6 +20,9 @@
     "res:start": "rescript build -w"
   },
   "devDependencies": {
+    "next-transpile-modules": "7.0.0",
+    "@rescript/react": "^0.10.1",
+    "gentype": "^3.45.0",
     "autoprefixer": "^10.1.0",
     "rescript": "9.1.2",
     "cssnano": "^4.1.10",

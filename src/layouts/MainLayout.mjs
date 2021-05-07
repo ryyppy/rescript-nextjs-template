@@ -17,7 +17,7 @@ function MainLayout$Navigation(Props) {
                             className: "text-xl ml-2 align-middle font-semibold"
                           }, "Next", React.createElement("span", {
                                 className: "text-orange-800"
-                              }, "RE")))
+                              }, " + ReScript")))
                 }), React.createElement("div", {
                   className: "flex w-2/3 justify-end"
                 }, React.createElement(Link, {

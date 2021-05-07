@@ -8,7 +8,7 @@ module Navigation = {
         <a className="flex items-center w-1/3">
           <img className="w-5" src="/static/zeit-black-triangle.svg" />
           <span className="text-xl ml-2 align-middle font-semibold">
-            {React.string("Next")} <span className="text-orange-800"> {React.string("RE")} </span>
+            {React.string("Next")} <span className="text-orange-800"> {React.string(" + ReScript")} </span>
           </span>
         </a>
       </Link>

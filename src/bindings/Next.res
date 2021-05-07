@@ -137,7 +137,6 @@ module Dynamic = {
     loading: unit => React.element,
   }
 
-  /** Test **/
   @module("next/dynamic")
   external dynamic: (unit => Js.Promise.t<'a>, options) => 'a = "default"
 

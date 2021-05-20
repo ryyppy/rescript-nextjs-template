@@ -20,7 +20,7 @@
     "res:start": "rescript build -w"
   },
   "devDependencies": {
-    "next-transpile-modules": "7.0.0",
+    "next-transpile-modules": "7.1.2",
     "@rescript/react": "^0.10.1",
     "gentype": "^3.45.0",
     "autoprefixer": "^10.1.0",

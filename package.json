@@ -1,13 +1,14 @@
 {
   "name": "rescript-nextjs-template",
   "version": "1.0.0",
-  "author": "Patrick Stapfer <ryyppy@users.noreply.github.com>",
-  "license": "Apache License 2.0",
+  "author": "Patrick Ecker <ryyppy@users.noreply.github.com>",
+  "license": "Apache-2.0",
   "dependencies": {
-    "next": "10.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "next": "10.2.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
+  "repository": "https://github.com/ryyppy/rescript-nextjs-template",
   "scripts": {
     "dev": "next",
     "debug": "NODE_OPTIONS='--inspect' next",
@@ -20,14 +21,14 @@
     "res:start": "rescript build -w"
   },
   "devDependencies": {
-    "next-transpile-modules": "7.0.0",
-    "@rescript/react": "^0.10.1",
-    "gentype": "^3.45.0",
-    "autoprefixer": "^10.1.0",
-    "rescript": "9.1.2",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.2.10",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.4"
+    "next-transpile-modules": "7.1.2",
+    "@rescript/react": "0.10.3",
+    "gentype": "4.1",
+    "autoprefixer": "10.1.0",
+    "rescript": "9.1",
+    "cssnano": "5.0.5",
+    "postcss": "8.2.15",
+    "postcss-cli": "8.3.1",
+    "tailwindcss": "2.0.4"
   }
 }

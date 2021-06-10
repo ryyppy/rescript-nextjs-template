@@ -13,7 +13,7 @@ module GetServerSideProps = {
 
   // See: https://github.com/zeit/next.js/blob/canary/packages/next/types/index.d.ts
   type context<'props, 'params, 'previewData> = {
-    params: Js.t<'params>,
+    params: 'params,
     query: Js.Dict.t<string>,
     preview: option<bool>, // preview is true if the page is in the preview mode and undefined otherwise.
     previewData: Js.Nullable.t<'previewData>,

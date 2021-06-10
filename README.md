@@ -7,6 +7,8 @@ This is a NextJS based template with following setup:
 - Some ReScript Bindings for Next to get you started
 - Preconfigured Dependencies: `@rescript/react`
 
+**Note:** This setup is based on the `v1` `package-lock` format utilized by `npm@6`. If you want to use the newer `v2` version, delete the `package-lock.json` file and install the dependencies with `npm@7`.
+
 ## Development
 
 Run ReScript in dev mode:

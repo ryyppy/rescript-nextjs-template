@@ -45,6 +45,33 @@ PORT=3001 npm start
 
 ## Tips
 
+### ES6 vs CommonJS
+
+This template is complying to the ES6 module format, and therefore compiles ReScript code to `mjs` files. In case you want to use this template with the old `commonjs` format, do the following changes:
+
+1) Set `package-specs` and `suffix` to the following configuration:
+
+```json
+{
+  //...
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+}
+```
+
+2) Replace all import paths in `pages` that refer to `src/MyResFile.mjs` to `src/MyResFile.bs.js`
+
+```diff
+// pages/_app.js
++import ResApp from "src/App.mjs"
++import ResApp from "src/App.bs.js"
+```
+
+Done. You are now running on commonjs modules.
+
 ### Don't be afraid to adapt your Next bindings
 
 We ship some general bindings for `NextJS`, but we try to keep them simple. Some use-cases and APIs might not be reflected yet, so feel free to adapt the file as you see fit for your app.

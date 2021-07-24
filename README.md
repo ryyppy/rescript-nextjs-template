@@ -51,7 +51,7 @@ This template is complying to the ES6 module format, and therefore compiles ReSc
 
 1) Set `package-specs` and `suffix` to the following configuration:
 
-```json
+```jsonc
 {
   //...
   "package-specs": {
